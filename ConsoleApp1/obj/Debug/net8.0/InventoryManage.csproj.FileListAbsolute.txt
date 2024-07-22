@@ -12,3 +12,4 @@
 /Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.pdb
 /Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.genruntimeconfig.cache
 /Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/ref/InventoryManage.dll
+/Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.sourcelink.json
