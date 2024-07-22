@@ -6,9 +6,9 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/kester/IM/InventoryManagement/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/actool/bundle/Assets.car</string>
-			<string>/Users/kester/IM/InventoryManagement/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/actool/bundle/appicon.icns</string>
-			<string>/Users/kester/IM/InventoryManagement/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/actool/partial-info.plist</string>
+			<string>/Users/kester/IM/IM/InventoryManagement/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/actool/bundle/Assets.car</string>
+			<string>/Users/kester/IM/IM/InventoryManagement/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/actool/bundle/appicon.icns</string>
+			<string>/Users/kester/IM/IM/InventoryManagement/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/actool/partial-info.plist</string>
 		</array>
 	</dict>
 </dict>

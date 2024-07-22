@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:InventoryMaui.ViewModels"
+             x:Class="InventoryMaui.Views.AddItemView"
+             Title="AddItemView">
+               <ContentPage.BindingContext>
+                    <vm:AddItemViewModel />
+             </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+             <Label Text="Add Item View!"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="24"
+                   Margin="0, 20, 0, 20" />
+
+            <Label Text="Name" 
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start" />
+            <Entry x:Name="NameEntry" 
+                   Text="{Binding Name}" 
+                   Placeholder="Enter item name" />
+
+            <Label Text="Description" 
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start" />
+            <Editor x:Name="DescriptionEditor" 
+                    Text="{Binding Description}" 
+                    Placeholder="Enter item description" 
+                    AutoSize="TextChanges" />
+
+            <Label Text="Price" 
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start" />
+            <Entry x:Name="PriceEntry" 
+                   Text="{Binding Price}" 
+                   Placeholder="Enter item price" 
+                   Keyboard="Numeric" />
+
+            <Label Text="Quantity" 
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start" />
+            <Entry x:Name="QuantityEntry" 
+                   Text="{Binding Quantity}" 
+                   Placeholder="Enter item quantity" 
+                   Keyboard="Numeric" />
+
+            <Button Text="Add Item"
+                    Command="{Binding AddItemCommand}"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="Center"
+                    Margin="0, 20, 0, 0" />
+            <Button Text="Cancel"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="Center" 
+                    Margin="0, 20, 0, 0"
+                    Clicked="CancelClicked"
+                    />
+                    <ListView ItemsSource="{Binding Items}" Margin="0, 20, 0, 0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                <!-- Additional item details can be added here -->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

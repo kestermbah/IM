@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kester/IM/InventoryManagement/InventoryManagement.csproj": {}
+    "/Users/kester/IM/IM/InventoryManagement/InventoryManagement.csproj": {}
   },
   "projects": {
-    "/Users/kester/IM/InventoryManagement/InventoryManagement.csproj": {
+    "/Users/kester/IM/IM/InventoryManagement/InventoryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kester/IM/InventoryManagement/InventoryManagement.csproj",
+        "projectUniqueName": "/Users/kester/IM/IM/InventoryManagement/InventoryManagement.csproj",
         "projectName": "InventoryManagement",
-        "projectPath": "/Users/kester/IM/InventoryManagement/InventoryManagement.csproj",
+        "projectPath": "/Users/kester/IM/IM/InventoryManagement/InventoryManagement.csproj",
         "packagesPath": "/Users/kester/.nuget/packages/",
-        "outputPath": "/Users/kester/IM/InventoryManagement/obj/",
+        "outputPath": "/Users/kester/IM/IM/InventoryManagement/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -61,11 +61,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.61, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.61, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -104,11 +104,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.61, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.61, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -147,11 +147,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.61, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.61, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",

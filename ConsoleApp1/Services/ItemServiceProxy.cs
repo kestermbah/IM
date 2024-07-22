@@ -4,9 +4,15 @@ namespace InventoryManage;
 
 public class ItemServiceProxy
 {
-    private ItemServiceProxy() {
-        items = new List<Item>();
+    public ItemServiceProxy() {
+        items = new List<Item>
+        {
+          new Item { Id = 1, Name = "Item 1", Description = "Description of Item 1", Price = 10, Quantity = 5 },
+          new Item { Id = 2, Name = "Item 2", Description = "Description of Item 2", Price = 20, Quantity = 3 },
+          new Item { Id = 3, Name = "Item 3", Description = "Description of Item 3", Price = 30, Quantity = 7 }
+        };
     }
+    
 
     private static ItemServiceProxy? instance;
     private static object instanceLock = new object();
@@ -63,7 +69,9 @@ public class ItemServiceProxy
         if(isAdd)
         {
             items.Add(item);
+            OnItemsChanged(); 
         }
+        OnItemsChanged(); 
         return item;
     }
 
@@ -78,7 +86,14 @@ public class ItemServiceProxy
             if(itemToDelete != null)
             {
                 items.Remove(itemToDelete);
+                OnItemsChanged();
             }
+        }
+        public event Action ItemsChanged;
+
+        protected virtual void OnItemsChanged()
+        {
+            ItemsChanged?.Invoke();
         }
 
 }

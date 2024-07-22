@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kester/IM/ConsoleApp1/InventoryManage.csproj",
+      "projectUniqueName": "/Users/kester/IM/IM/ConsoleApp1/InventoryManage.csproj",
       "projectName": "InventoryManage",
-      "projectPath": "/Users/kester/IM/ConsoleApp1/InventoryManage.csproj",
+      "projectPath": "/Users/kester/IM/IM/ConsoleApp1/InventoryManage.csproj",
       "packagesPath": "/Users/kester/.nuget/packages/",
-      "outputPath": "/Users/kester/IM/ConsoleApp1/obj/",
+      "outputPath": "/Users/kester/IM/IM/ConsoleApp1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kester/.nuget/NuGet/NuGet.Config"

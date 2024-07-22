@@ -2,23 +2,20 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
 
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	public void ManageInventoryClicked(object sender, EventArgs e)
 	{
-		count++;
+		Shell.Current.GoToAsync("//Inventory");
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+	}
+	public void ShopClicked(object sender, EventArgs e)
+	{
+				Shell.Current.GoToAsync("//Shop");
 	}
 }
 

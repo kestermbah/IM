@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:InventoryMaui.ViewModels"
+             x:Class="InventoryMaui.Views.DeleteItemView"
+             Title="DeleteItemView">
+
+    <ContentPage.BindingContext>
+        <vm:DeleteItemViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label 
+                Text="Delete Item View!"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontSize="24"
+                Margin="0, 20, 0, 20" />
+            
+            <ListView 
+                ItemsSource="{Binding Items}" 
+                Margin="0, 20, 0, 0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                <Button Text="Delete" Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference DeleteItemView}}" CommandParameter="{Binding Id}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Cancel"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="Center" 
+                    Margin="0, 20, 0, 0"
+                    Clicked="CancelClicked"
+                    />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

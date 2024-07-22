@@ -1,13 +1,30 @@
-﻿namespace InventoryManage;
+﻿using System;
+using System.Collections.Generic;
+namespace InventoryManage;
 
 public class Shop
 {
     private ItemServiceProxy inv;
     private Dictionary<int, int> cart = new Dictionary<int, int>();
+    public event Action ItemsUpdated;
+    public event Action CartUpdated;
+
+
+    public void AddOrUpdate(Item item) {
+        inv.AddorUpdate(item);
+        OnItemsUpdated();
+    }
+
+    public void Delete(Item item) {
+         inv.Delete(item.Id);
+         OnItemsUpdated();
+    }
+
 
      public Shop(ItemServiceProxy itemService)
         {
             inv = itemService;
+            inv.ItemsChanged += OnItemsUpdated;
         }
 
 
@@ -35,6 +52,8 @@ public class Shop
             item.Quantity -= quantity;
             inv.AddorUpdate(item);
             Console.WriteLine($"Added {quantity} of '{item.Name}' to cart.");
+            OnItemsUpdated();
+            OnCartUpdated();
         }
          public void RemoveFromCart(int id, int quantity)
         {
@@ -60,6 +79,8 @@ public class Shop
                 cart.Remove(id);
             }
             Console.WriteLine($"Removed {quantity} of item with ID {id} from cart.");
+            OnItemsUpdated();
+            OnCartUpdated();
         }
 
         public void Checkout()
@@ -83,9 +104,26 @@ public class Shop
                 }
                 Console.WriteLine($"Item: {cartItem.Name}, Quantity: {item.Value}");
         }
-        Console.WriteLine($"Subtotal: {subtotal:C}");
-        Console.WriteLine($"Tax (7%): {tax:C}");
-        Console.WriteLine($"Total with tax: {total.ToString("F2")}");
+            Console.WriteLine($"Subtotal: {subtotal:C}");
+            Console.WriteLine($"Tax (7%): {tax:C}");
+            Console.WriteLine($"Total: {total:C}");
 
-}
-}
+
+            cart.Clear();
+            OnItemsUpdated();
+            OnCartUpdated();
+        }
+
+        public IEnumerable<Item> GetItems() => inv.Items ?? Enumerable.Empty<Item>();
+
+        public Dictionary<int, int> Cart => cart;
+        private void OnItemsUpdated()
+        {
+            ItemsUpdated?.Invoke();
+        }
+         private void OnCartUpdated()
+        {
+            CartUpdated?.Invoke();
+        }
+    }
+       
