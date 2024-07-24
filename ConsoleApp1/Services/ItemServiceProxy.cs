@@ -7,14 +7,14 @@ namespace InventoryManage;
 public class ItemServiceProxy
 {
     public ItemServiceProxy() {
-        items = new List<Item>
+        items = new List<ItemDTO>
         {
-          new Item { Id = 1, Name = "Item 1", Description = "Description of Item 1", Price = 10, Quantity = 5 },
-          new Item { Id = 2, Name = "Item 2", Description = "Description of Item 2", Price = 20, Quantity = 3 },
-          new Item { Id = 3, Name = "Item 3", Description = "Description of Item 3", Price = 30, Quantity = 7 }
+          new ItemDTO { Id = 1, Name = "Item 1", Description = "Description of Item 1", Price = 10, Quantity = 5 },
+          new ItemDTO { Id = 2, Name = "Item 2", Description = "Description of Item 2", Price = 20, Quantity = 3 },
+          new ItemDTO { Id = 3, Name = "Item 3", Description = "Description of Item 3", Price = 30, Quantity = 7 }
         };
         var response = new WebRequestHandler().Get("/inventory").Result; 
-        items = JsonConvert.DeserializeObject<List<Item>>(response);
+        items = JsonConvert.DeserializeObject<List<ItemDTO>>(response);
        
     }
     
@@ -38,8 +38,8 @@ public class ItemServiceProxy
             return instance;
         }
     }
-    private List<Item>? items;
-    public ReadOnlyCollection<Item>? Items
+    private List<ItemDTO>? items;
+    public ReadOnlyCollection<ItemDTO>? Items
     {
         get
         {
@@ -58,7 +58,7 @@ public class ItemServiceProxy
         }
     }
 
-    public Item? AddorUpdate(Item item){
+    public ItemDTO? AddorUpdate(ItemDTO item){
         if (items == null)
         {
             return null; 

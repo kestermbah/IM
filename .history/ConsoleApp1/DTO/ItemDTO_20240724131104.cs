@@ -15,5 +15,4 @@ public class ItemDTO
         Price = P.Price;
         Quantity = P.Quantity;
     }
-    public ItemDTO() {}
 }

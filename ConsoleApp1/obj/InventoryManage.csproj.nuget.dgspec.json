@@ -67,6 +67,11 @@
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "maccatalyst-arm64": {
+          "#import": []
+        }
       }
     }
   }

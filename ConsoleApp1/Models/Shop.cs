@@ -10,12 +10,12 @@ public class Shop
     public event Action CartUpdated;
 
 
-    public void AddOrUpdate(Item item) {
+    public void AddOrUpdate(ItemDTO item) {
         inv.AddorUpdate(item);
         OnItemsUpdated();
     }
 
-    public void Delete(Item item) {
+    public void Delete(ItemDTO item) {
          inv.Delete(item.Id);
          OnItemsUpdated();
     }
@@ -114,7 +114,7 @@ public class Shop
             OnCartUpdated();
         }
 
-        public IEnumerable<Item> GetItems() => inv.Items ?? Enumerable.Empty<Item>();
+        public IEnumerable<ItemDTO> GetItems() => inv.Items ?? Enumerable.Empty<ItemDTO>();
 
         public Dictionary<int, int> Cart => cart;
         private void OnItemsUpdated()

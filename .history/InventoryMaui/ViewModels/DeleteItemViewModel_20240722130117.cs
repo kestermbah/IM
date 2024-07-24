@@ -10,12 +10,12 @@ namespace InventoryMaui.ViewModels
     {
         public DeleteItemViewModel()
         {
-            Items = new ObservableCollection<ItemDTO>(ItemServiceProxy.Current.Items);
+            Items = new ObservableCollection<Item>(ItemServiceProxy.Current.Items);
             DeleteItemCommand = new Command<int>(DeleteItem);
              ItemServiceProxy.Current.ItemsChanged += OnItemsChanged;
         }
 
-        public ObservableCollection<ItemDTO> Items { get; }
+        public ObservableCollection<Item> Items { get; }
 
         public ICommand DeleteItemCommand { get; }
 

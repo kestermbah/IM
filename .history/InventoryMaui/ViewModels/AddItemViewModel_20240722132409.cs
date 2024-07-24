@@ -14,11 +14,11 @@ public class AddItemViewModel : INotifyPropertyChanged
         private int quantity;   
           public AddItemViewModel()
         {
-            Items = new ObservableCollection<ItemDTO>(ItemServiceProxy.Current.Items);
+            Items = new ObservableCollection<Item>(ItemServiceProxy.Current.Items);
             AddItemCommand = new Command(AddItem);
         }
 
-          public ObservableCollection<ItemDTO> Items { get; }
+          public ObservableCollection<Item> Items { get; }
 
         public string Name
         {
@@ -63,7 +63,7 @@ public class AddItemViewModel : INotifyPropertyChanged
         public ICommand AddItemCommand { get; }
         private void AddItem()
         {
-            var item = new ItemDTO
+            var item = new Item
             {
                 Name = Name,
                 Description = Description,

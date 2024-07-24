@@ -8,12 +8,12 @@ namespace InventoryMaui.ViewModels
     public class ShopViewModel : BaseViewModel
     {
         private ShopProxy shopProxy;
-        private ItemDTO selectedItem;
+        private Item selectedItem;
       
 
-        public ObservableCollection<ItemDTO> Items { get; set; }
+        public ObservableCollection<Item> Items { get; set; }
         public ObservableCollection<CartItem> CartItems { get; set; }
-        public ItemDTO SelectedItem
+        public Item SelectedItem
         {
             get => selectedItem;
             set => SetProperty(ref selectedItem, value);
@@ -29,7 +29,7 @@ namespace InventoryMaui.ViewModels
             shopProxy.ItemsUpdated += OnItemsUpdated;
             shopProxy.CartUpdated += OnCartUpdated;
 
-            Items = new ObservableCollection<ItemDTO>(shopProxy.GetItems());
+            Items = new ObservableCollection<Item>(shopProxy.GetItems());
             CartItems = new ObservableCollection<CartItem>(shopProxy.GetCartItems());
 
             AddToCartCommand = new Command<Item>(OnAddToCart);

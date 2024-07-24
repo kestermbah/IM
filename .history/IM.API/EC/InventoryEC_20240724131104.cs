@@ -10,7 +10,7 @@ public class InventoryEC
 
     public async Task<IEnumerable<ItemDTO>> Get()
     {
-        return FakeDatabase.Items.Take(100).Select(c => new ItemDTO(c));
+        return FakeDatabase.Items.Take(100);
     }
 
 }

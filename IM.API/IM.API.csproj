@@ -27,4 +27,12 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="libs/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleApp1\InventoryManage.csproj" />
+  </ItemGroup>
+
 </Project>
