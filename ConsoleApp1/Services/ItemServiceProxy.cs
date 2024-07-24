@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using Newtonsoft.Json;
+ 
 
 namespace InventoryManage;
 
@@ -12,8 +13,9 @@ public class ItemServiceProxy
           new Item { Id = 2, Name = "Item 2", Description = "Description of Item 2", Price = 20, Quantity = 3 },
           new Item { Id = 3, Name = "Item 3", Description = "Description of Item 3", Price = 30, Quantity = 7 }
         };
-        var response = "I made a call";
-       items = JsonConvert.DeserializeObject<List<Item>>(response);
+        var response = new WebRequestHandler().Get("/inventory").Result; 
+        items = JsonConvert.DeserializeObject<List<Item>>(response);
+       
     }
     
 
