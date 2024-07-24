@@ -8,7 +8,7 @@ public class Item
     public double? Price { get; set; }
     public int?Quantity { get; set; }
     
-     public string? Display
+     /* public string? Display
         {
             get
             {
@@ -19,6 +19,6 @@ public class Item
       public override string ToString()
       {
         return $"Id: {Id}, Name: {Name}, Description: {Description}, Price: {Price}, Quantity: {Quantity}";
-      }
+      } */
 
 }

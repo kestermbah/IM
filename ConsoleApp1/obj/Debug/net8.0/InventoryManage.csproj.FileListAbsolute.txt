@@ -13,9 +13,13 @@
 /Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.genruntimeconfig.cache
 /Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/ref/InventoryManage.dll
 <<<<<<< HEAD
+=======
+/Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.sourcelink.json
+>>>>>>> 6428bc1768b7d4377d779410a546edcb0460cbf3
 /Users/kester/IM/IM/ConsoleApp1/bin/Debug/net8.0/InventoryManage.deps.json
 /Users/kester/IM/IM/ConsoleApp1/bin/Debug/net8.0/InventoryManage.dll
 /Users/kester/IM/IM/ConsoleApp1/bin/Debug/net8.0/InventoryManage.pdb
+/Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.csproj.AssemblyReference.cache
 /Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.GeneratedMSBuildEditorConfig.editorconfig
 /Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.AssemblyInfoInputs.cache
 /Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.AssemblyInfo.cs
@@ -25,6 +29,3 @@
 /Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/refint/InventoryManage.dll
 /Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.pdb
 /Users/kester/IM/IM/ConsoleApp1/obj/Debug/net8.0/ref/InventoryManage.dll
-=======
-/Users/kester/IM/ConsoleApp1/obj/Debug/net8.0/InventoryManage.sourcelink.json
->>>>>>> 6428bc1768b7d4377d779410a546edcb0460cbf3

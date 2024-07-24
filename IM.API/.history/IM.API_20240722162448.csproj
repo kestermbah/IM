@@ -21,10 +21,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="InventoryManage">
-      <HintPath>libs/InventoryManage.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

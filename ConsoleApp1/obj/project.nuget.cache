@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6v0Z0mz57MQ=",
+  "dgSpecHash": "emVtxDljC7s=",
   "success": true,
   "projectFilePath": "/Users/kester/IM/IM/ConsoleApp1/InventoryManage.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/kester/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
