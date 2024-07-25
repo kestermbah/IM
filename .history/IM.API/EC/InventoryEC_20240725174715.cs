@@ -29,14 +29,5 @@ public class InventoryEC
         }
        return await Task.FromResult(item);
     }
-    public async Task Delete(int id)
-        {
-   
-            var itemToDelete = FakeDatabase.Items.FirstOrDefault(c => c.Id == id);
-            if (itemToDelete != null)
-            {
-                FakeDatabase.Items.Remove(itemToDelete);
-            }
-        }
 
 }

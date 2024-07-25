@@ -63,34 +63,37 @@ public class ItemServiceProxy
         {
             return null; 
         }
+       var existingItem = items.FirstOrDefault(i => i.Id == item.Id);
+            if (existingItem != null)
+            {
+                existingItem.Name = item.Name;
+                existingItem.Description = item.Description;
+                existingItem.Price = item.Price;
+                existingItem.Quantity = item.Quantity;
+            }
+            else
+            {
+                item.Id = LastID + 1;
+                items.Add(item);
+            }
 
-        var isAdd = false; 
-
-        if(item.Id == 0)
-        {
-            item.Id = LastID + 1;
-            isAdd = true;
-        }
-        if(isAdd)
-        {
-            items.Add(item);
-            OnItemsChanged(); 
-        }
-        OnItemsChanged(); 
-        return item;
+            var result = new WebRequestHandler().Post("/inventory", item).Result;
+            OnItemsChanged();
+            return JsonConvert.DeserializeObject<ItemDTO>(result);
     }
 
        public void Delete(int id)
         {
-            if (items == null)
+              if (items == null)
             {
                 return;
             }
+
             var itemToDelete = items.FirstOrDefault(c => c.Id == id);
-            
-            if(itemToDelete != null)
+            if (itemToDelete != null)
             {
                 items.Remove(itemToDelete);
+                new WebRequestHandler().Delete($"/inventory/{id}").Wait();
                 OnItemsChanged();
             }
         }

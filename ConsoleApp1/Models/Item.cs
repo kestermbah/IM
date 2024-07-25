@@ -7,6 +7,16 @@ public class Item
     public string? Description { get; set; }
     public double? Price { get; set; }
     public int?Quantity { get; set; }
+
+    public Item (ItemDTO item)
+    {
+      Id = item.Id;
+        Name = item.Name;
+        Description = item.Description;
+        Price = item.Price;
+        Quantity = item.Quantity;
+    }
+    public Item(){}
     
      /* public string? Display
         {

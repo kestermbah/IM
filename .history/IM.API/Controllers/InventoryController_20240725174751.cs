@@ -23,14 +23,7 @@ public class InventoryController: ControllerBase
     {
         return await new InventoryEC().AddorUpdate(item);
     }
-     [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await new InventoryEC().Delete(id);
-            return NoContent();
-        }
-    }
     
 
 }
-
+}

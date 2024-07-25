@@ -30,7 +30,5 @@ public class InventoryController: ControllerBase
             return NoContent();
         }
     }
-    
 
 }
-
