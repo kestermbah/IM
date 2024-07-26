@@ -58,6 +58,12 @@ public class ItemServiceProxy
         }
     }
 
+
+        public ItemDTO? GetItemById(int id)
+        {
+            return items?.FirstOrDefault(item => item.Id == id);
+        }
+
     public ItemDTO? AddorUpdate(ItemDTO item){
         if (items == null)
         {
@@ -75,6 +81,7 @@ public class ItemServiceProxy
         {
           
             var brokeItem = await new WebRequestHandler().Delete($"/{id}");
+            Console.WriteLine($"Server response: {brokeItem}");;
             var itemToDelete = JsonConvert.DeserializeObject<ItemDTO>(brokeItem);
             var response = new WebRequestHandler().Get("/inventory").Result; 
             items = JsonConvert.DeserializeObject<List<ItemDTO>>(response);

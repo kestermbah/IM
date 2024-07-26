@@ -71,4 +71,10 @@
 	  </ProjectReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Views/EditItemPage.xaml.cs">
+	    <DependentUpon>EditItemPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
