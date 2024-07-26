@@ -30,8 +30,4 @@
         Title="Home"
         ContentTemplate="{DataTemplate views:DeleteItemView}"
         Route="DeleteItem" />
-    <ShellContent 
-    Title="Edit Item" 
-    ContentTemplate="{DataTemplate views:EditItemPage}" 
-    Route="EditItemPage" />    
 </Shell>

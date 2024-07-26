@@ -58,6 +58,12 @@ public class ItemServiceProxy
         }
     }
 
+
+        public ItemDTO? GetItemById(int id)
+        {
+            return items?.FirstOrDefault(item => item.Id == id);
+        }
+
     public ItemDTO? AddorUpdate(ItemDTO item){
         if (items == null)
         {

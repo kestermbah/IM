@@ -29,7 +29,6 @@
                                 <Label Text="{Binding Price}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
                                 <Button Text="Delete" Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding Id}" />
-                                <Button Text="Edit" Command="{Binding BindingContext.EditItemCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding Id}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -41,6 +40,12 @@
             VerticalOptions="Center"
             HorizontalOptions="FillAndExpand"
             Margin="0, 10, 0, 0" />
+        <Button
+            Text="Delete Item"
+            Clicked="deleteItemClicked"
+            VerticalOptions="Center"
+            HorizontalOptions="FillAndExpand"
+            Margin="0, 10, 0, 0" />    
         
         <Button
             Text="Go Back"

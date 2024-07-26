@@ -30,11 +30,11 @@ namespace InventoryMaui.ViewModels
         }
         public ICommand DeleteItemCommand { get; }
         public ICommand EditItemCommand { get; }
-       private async void OnEditItem(int itemId)
+        private async void OnEditItem(int itemId)
         {
-            await Shell.Current.GoToAsync($"///EditItemPage?itemId={itemId}");
-        }        
-    public async void DeleteItem(int itemId)
+            await Shell.Current.GoToAsync($"EditItemPage?itemId={itemId}");
+        }
+        public async void DeleteItem(int itemId)
         {
             ItemServiceProxy.Current.Delete(itemId);
         }
