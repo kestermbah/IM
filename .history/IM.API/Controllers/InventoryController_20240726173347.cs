@@ -24,15 +24,10 @@ public class InventoryController: ControllerBase
         return await new InventoryEC().AddorUpdate(item);
     }
      [HttpDelete("{id}")]
-         public IActionResult Delete (int id)
+        public async Task<ItemDTO> Delete(int id)
         {
-         var itemDTO = new InventoryEC().Delete(id);
-
-        if (itemDTO != null)
-        {
-            return Ok(itemDTO); 
-        }
-        return NotFound(new { message = "Item not found" });
+            
+            return await new InventoryEC().Delete(id); 
         }
     }
     

@@ -40,14 +40,14 @@ public class InventoryEC
     }
 
     
-    public async Task<ItemDTO> Delete(int id)
+    public async Task<ItemDTO?> Delete(int id)
         {
             var deletedItem = Filebase.Current.Delete(id);
-             if (deletedItem == null)
-            {
-            return null;
-             }
             return new ItemDTO(deletedItem);
-            }
-          
+            /* if (itemToDelete == null)
+            {
+                return null;
+            } */ 
+            //FakeDatabase.Items.Remove(itemToDelete);
+             }
 }

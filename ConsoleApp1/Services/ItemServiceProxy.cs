@@ -71,10 +71,11 @@ public class ItemServiceProxy
             return JsonConvert.DeserializeObject<ItemDTO>(result);
     }
 
-      public ItemDTO? Delete(int id)
+      public async Task<ItemDTO?> Delete(int id)
         {
           
-            var brokeItem = new WebRequestHandler().Delete($"/{id}").Result;
+            var brokeItem = await new WebRequestHandler().Delete($"/{id}");
+            Console.WriteLine($"Server response: {brokeItem}");;
             var itemToDelete = JsonConvert.DeserializeObject<ItemDTO>(brokeItem);
             var response = new WebRequestHandler().Get("/inventory").Result; 
             items = JsonConvert.DeserializeObject<List<ItemDTO>>(response);

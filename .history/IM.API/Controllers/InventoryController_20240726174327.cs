@@ -32,7 +32,7 @@ public class InventoryController: ControllerBase
         {
             return Ok(itemDTO); 
         }
-        return NotFound(new { message = "Item not found" });
+        return NotFound();
         }
     }
     

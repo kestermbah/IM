@@ -101,7 +101,7 @@ namespace IM.API.Databse
                 if (deletedItem != null)
                 {
          
-                Items.Remove(deletedItem);
+                 Items.Remove(deletedItem);
                 return deletedItem;
                 }
                
