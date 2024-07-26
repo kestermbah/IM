@@ -7,8 +7,18 @@ public class Item
     public string? Description { get; set; }
     public double? Price { get; set; }
     public int?Quantity { get; set; }
+
+    public Item (ItemDTO item)
+    {
+      Id = item.Id;
+        Name = item.Name;
+        Description = item.Description;
+        Price = item.Price;
+        Quantity = item.Quantity;
+    }
+    public Item(){}
     
-     public string? Display
+     /* public string? Display
         {
             get
             {
@@ -19,6 +29,6 @@ public class Item
       public override string ToString()
       {
         return $"Id: {Id}, Name: {Name}, Description: {Description}, Price: {Price}, Quantity: {Quantity}";
-      }
+      } */
 
 }
