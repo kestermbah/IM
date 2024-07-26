@@ -42,7 +42,7 @@ public class InventoryEC
     }
     public async Task<ItemDTO?> Delete(int id)
         {
-            var itemToDelete = FakeDatabase.Items.FirstOrDefault(p => p.Id == id);
+            var itemToDelete = Items.FirstOrDefault(p => p.Id == id);
             if (itemToDelete == null)
             {
                 return null;

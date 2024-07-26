@@ -29,9 +29,9 @@ namespace InventoryMaui.ViewModels
         }
         public ICommand DeleteItemCommand { get; }
 
-        public async void DeleteItem(int itemId)
+        private void DeleteItem(int itemId)
         {
-            await ItemServiceProxy.Current.Delete(itemId);
+            ItemServiceProxy.Current.Delete(itemId);
         }
 
         private void OnItemsChanged()
