@@ -39,7 +39,7 @@ namespace InventoryManage
 
         public async Task<string> Delete(string url)
         {
-            var fullUrl = $"http://localhost:5202/inventory{url}";
+            var fullUrl = $"http://localhost:5202/inventory";
             try
             {
                 using (var client = new HttpClient())

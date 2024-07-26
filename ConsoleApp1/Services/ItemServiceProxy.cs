@@ -63,39 +63,23 @@ public class ItemServiceProxy
         {
             return null; 
         }
-       var existingItem = items.FirstOrDefault(i => i.Id == item.Id);
-            if (existingItem != null)
-            {
-                existingItem.Name = item.Name;
-                existingItem.Description = item.Description;
-                existingItem.Price = item.Price;
-                existingItem.Quantity = item.Quantity;
-            }
-            else
-            {
-                item.Id = LastID + 1;
-                items.Add(item);
-            }
-
+  
             var result = new WebRequestHandler().Post("/inventory", item).Result;
+            var response = new WebRequestHandler().Get("/inventory").Result; 
+            items = JsonConvert.DeserializeObject<List<ItemDTO>>(response);
             OnItemsChanged();
             return JsonConvert.DeserializeObject<ItemDTO>(result);
     }
 
-       public void Delete(int id)
+      public async Task<ItemDTO?> Delete(int id)
         {
-              if (items == null)
-            {
-                return;
-            }
-
-            var itemToDelete = items.FirstOrDefault(c => c.Id == id);
-            if (itemToDelete != null)
-            {
-                items.Remove(itemToDelete);
-                new WebRequestHandler().Delete($"/inventory/{id}").Wait();
-                OnItemsChanged();
-            }
+          
+            var brokeItem = await new WebRequestHandler().Delete($"/{id}");
+            var itemToDelete = JsonConvert.DeserializeObject<ItemDTO>(brokeItem);
+            var response = new WebRequestHandler().Get("/inventory").Result; 
+            items = JsonConvert.DeserializeObject<List<ItemDTO>>(response);
+            OnItemsChanged();
+            return itemToDelete;
         }
         public event Action ItemsChanged;
 

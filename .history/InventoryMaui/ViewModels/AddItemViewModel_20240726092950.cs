@@ -15,7 +15,7 @@ public class AddItemViewModel : INotifyPropertyChanged
           public AddItemViewModel()
         {
             Items = new ObservableCollection<ItemDTO>(ItemServiceProxy.Current.Items);
-            AddItemCommand = new Command(AddItem);
+            AddItemCommand = new Command(async () => await AddItem());
         
         }
 
@@ -72,7 +72,7 @@ public class AddItemViewModel : INotifyPropertyChanged
                 Quantity = Quantity
             };
 
-            var addedItem = ItemServiceProxy.Current.AddorUpdate(item);
+            var addedItem = await ItemServiceProxy.Current.AddorUpdate(item);
             if (addedItem != null)
             {
                 Items.Add(addedItem);

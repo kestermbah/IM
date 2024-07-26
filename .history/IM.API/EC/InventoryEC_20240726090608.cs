@@ -14,18 +14,18 @@ public class InventoryEC
     }
 
     public async Task<ItemDTO> AddorUpdate(ItemDTO item)
-   {
-    var isAdd = false;
-
-    if (item.Id == 0)
     {
-        item.Id = FakeDatabase.LastID + 1; // Calculate new ID based on the current LastID
-        isAdd = true;
-    }
+        var isAdd = false; 
 
-    if (isAdd)
+        if(item.Id == 0)
+        {
+            item.Id = FakeDatabase.LastID + 1;
+            isAdd = true;
+        }
+         if (isAdd)
     {
-        FakeDatabase.Items.Add(new Item(item));
+        FakeDatabase.Items.Add(new Item(item)); 
+        FakeDatabase.LastID = item.Id; 
     }
     else
     {
@@ -34,22 +34,19 @@ public class InventoryEC
         {
             existingItem.Name = item.Name;
             existingItem.Description = item.Description;
-            // Update other fields as necessary
         }
     }
 
     return await Task.FromResult(item);
     }
-    public async Task<ItemDTO?> Delete(int id)
+    public async Task Delete(int id)
         {
-            var itemToDelete = FakeDatabase.Items.FirstOrDefault(p => p.Id == id);
-            if (itemToDelete == null)
+   
+            var itemToDelete = FakeDatabase.Items.FirstOrDefault(c => c.Id == id);
+            if (itemToDelete != null)
             {
-                return null;
+                FakeDatabase.Items.Remove(itemToDelete);
             }
-
-            FakeDatabase.Items.Remove(itemToDelete);
-            return new ItemDTO(itemToDelete);
         }
 
 }
