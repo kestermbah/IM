@@ -10,7 +10,7 @@ public class InventoryEC
 
     public async Task<IEnumerable<ItemDTO>> Get()
     {
-        return Filebase.Current.Items.Take(100).Select(c => new ItemDTO(c));
+        return FileBase.Current.Items.Take(100).Select(c => new ItemDTO(c));
     }
 
     public async Task<ItemDTO> AddorUpdate(ItemDTO p)
@@ -36,7 +36,7 @@ public class InventoryEC
             existingItem.Description = item.Description;
             // Update other fields as necessary
         } */
-        return new ItemDTO(Filebase.Current.AddOrUpdate(new Item(p)));
+        return new ItemDTO(FileBase.Current.AddOrUpdate(new Item(p)));
     }
 
     
