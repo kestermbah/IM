@@ -11,7 +11,7 @@ public class InventoryEC
 
     public async Task<IEnumerable<ItemDTO>> Get()
     {
-        return Filebase.Current.Items.Select(c => new ItemDTO(c));
+        return Filebase.Current.Items.Take(100).Select(c => new ItemDTO(c));
     }
 
     public async Task<ItemDTO> AddorUpdate(ItemDTO p)

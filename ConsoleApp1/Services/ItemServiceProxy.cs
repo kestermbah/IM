@@ -76,7 +76,7 @@ public class ItemServiceProxy
           
             var brokeItem = await new WebRequestHandler().Delete($"/{id}");
             var itemToDelete = JsonConvert.DeserializeObject<ItemDTO>(brokeItem);
-            var response = new WebRequestHandler().Get("/inventory").Result; 
+            var response = await new WebRequestHandler().Get("/inventory"); 
             items = JsonConvert.DeserializeObject<List<ItemDTO>>(response);
             OnItemsChanged();
             return itemToDelete;
